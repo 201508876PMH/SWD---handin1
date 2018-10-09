@@ -6,7 +6,79 @@
              xmlns:local="clr-namespace:MainMenu"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+
+    <Grid Background="LightGray" ShowGridLines="True">
+        
+        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox>
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Search" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <StackPanel Name="ChangeUsernameLabelsPanel" Grid.Column="0" Grid.Row="0">
+            <Label Name="UsernameLabel" Content="Username:"></Label>
+            <Label Name="EmailLabel" Content="Email:"></Label>
+            <Label Name="RepeatEmailLabel" Content="Repeat Email:"></Label>
+        </StackPanel>
+
+        <StackPanel Name="ChangeUsernameTextBoxPanel" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Width="100*">
+            <TextBox Name="UsernameTextBox" ></TextBox>
+            <TextBox Name="EmailTextBox"></TextBox>
+            <TextBox Name="RepeatEmailTextBox"></TextBox>
+        </StackPanel>
+
+        <StackPanel Name="ChangePasswordLabelsPanel" Grid.Column="0" Grid.Row="1">
+            <Label Name="CurrentPasswordLabel" Content="Current password:"></Label>
+            <Label Name="NewPasswordLabel" Content="New password:"></Label>
+            <Label Name="RepeatNewPasswordLabel" Content="Repeat new password:"></Label>
+        </StackPanel>
+
+        <StackPanel Name="ChangePasswordTextBoxPanel" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="100*">
+            <TextBox Name="CurrentPasswordTextBox"></TextBox>
+            <TextBox Name="NewPasswordTextBox"></TextBox>
+            <TextBox Name="RepeatNewPasswordTextBox"></TextBox>
+        </StackPanel>
+
+        <StackPanel Name="LogoutAndDeleteBtnsPanel" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Button Name="LogoutBtn" Content="Logout" Click="LogoutBtn_OnClick"></Button>
+            <Button Name="DeleteBtn" Content="Delete Account" Click="DeleteBtn_OnClick"></Button>
+        </StackPanel>
+
+        <StackPanel Name="SaveBtnpanel" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Name="SaveBtn" Content="Save" Click="SaveBtn_OnClick"></Button>
+        </StackPanel>
+
     </Grid>
 </UserControl>
