@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using MainMenu.ModelView;
+using MainMenu.View;
+
+
 namespace MainMenu
 {
     /// <summary>
@@ -25,9 +29,14 @@ namespace MainMenu
             InitializeComponent();
         }
 
-        private void ActivateAccountSettings_OnClick(object sender, RoutedEventArgs e)
+        private void testBttn_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            DataContext = new AccountSettingsView();
+        }
+
+        private void something(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AddMemberView();
         }
     }
 }
