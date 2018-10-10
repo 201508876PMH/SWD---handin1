@@ -21,7 +21,6 @@
         </DataTemplate>
     </Window.Resources>
 
-
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150*"/>
