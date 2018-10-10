@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\GroupSettings.cs" />
     <Compile Include="classes\RelayCommand.cs" />
     <Compile Include="ModelView\AddGroupViewModel.cs" />
     <Page Include="Resources\AddOnlineVersion_16x.xaml">

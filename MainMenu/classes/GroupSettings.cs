@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainMenu.Model
+namespace MainMenu.classes
 {
-    public class AccountSettingsModel
+    public class GroupSettings
     {
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 using System.Windows.Controls;
 
-namespace MainMenu.View
+namespace MainMenu.ModelView
 {
     /// <summary>
     /// Interaction logic for AddMemberView.xaml
@@ -12,12 +12,6 @@ namespace MainMenu.View
         {
             InitializeComponent();
         }
-
-
-
-
-
-
 
     }
 }

@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 
-namespace MainMenu
+namespace MainMenu.ModelView
 {
     /// <summary>
     /// Interaction logic for AccountSettingsView.xaml
