@@ -6,7 +6,7 @@ namespace MainMenu.ModelView
     /// <summary>
     /// Interaction logic for AddMemberView.xaml
     /// </summary>
-    public class AddMemberViewModel : UserControl
+    public class AddMemberViewModel : ViewModelCore
     {
         
 
