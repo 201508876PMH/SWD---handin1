@@ -4,19 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainMenu"
-        xmlns:classes="clr-namespace:MainMenu.classes"
-        xmlns:ModelView="clr-namespace:MainMenu"
         xmlns:view="clr-namespace:MainMenu.View"
+        xmlns:modelView="clr-namespace:MainMenu.ModelView"
+
+
         mc:Ignorable="d"
         Title="UMU, UniMeetUp" Height="550" Width="1100">
 
     <Window.Resources>
-        <DataTemplate x:Name="groupSettingsTemplate" DataType="{x:Type classes:GroupSettings}">
-            <view:A DataContext="{Binding}"></view:A>
+        <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type modelView:AccountSettingsViewModel}">
+            <view:AccountSettingsView DataContext="{Binding}"></view:AccountSettingsView>
         </DataTemplate>
 
-        <DataTemplate x:Name="AccountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
-            <view:AccountSettingsViewModel DataContext="{Binding}"></view:AccountSettingsViewModel>
+        <DataTemplate x:Name="addMemberSettingsTemplate" DataType="{x:Type modelView:AddMemberViewModel}">
+            <view:AddMemberView DataContext="{Binding}"></view:AddMemberView>
         </DataTemplate>
     </Window.Resources>
 

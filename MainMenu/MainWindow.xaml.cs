@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using MainMenu.ModelView;
+using MainMenu.View;
 
 
 namespace MainMenu
@@ -30,12 +31,12 @@ namespace MainMenu
 
         private void testBttn_Click(object sender, RoutedEventArgs e)
         {
-            DataContext = new AccountSettingsViewModel();
+            DataContext = new AccountSettingsView();
         }
 
         private void something(object sender, RoutedEventArgs e)
         {
-            DataContext = new AddGroupViewModel();
+            DataContext = new AddMemberView();
         }
     }
 }
