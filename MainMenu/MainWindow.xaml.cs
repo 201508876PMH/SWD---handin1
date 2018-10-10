@@ -24,5 +24,12 @@ namespace MainMenu
         {
             InitializeComponent();
         }
+
+        private void testBttn_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AccountSettingsViewModel();
+        }
+
+
     }
 }

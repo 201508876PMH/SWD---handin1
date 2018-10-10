@@ -4,9 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainMenu"
+        xmlns:classes="clr-namespace:MainMenu.classes"
+        xmlns:MMV="clr-namespace:MainMenu"
+
+
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+
+    <!--<Window.Resources>
+        <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
+            <MMV:AccountSettingsView DataContext="{Binding}"></MMV:AccountSettingsView>
+        </DataTemplate>
+    </Window.Resources>-->
+    <Window.Resources>
+        <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
+            <MMV:AccountSettingsViewModel  DataContext="{Binding}"></MMV:AccountSettingsViewModel>
+        </DataTemplate>
+    </Window.Resources>
+
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="268*"/>
+            <ColumnDefinition Width="527*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="311*"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="EventHandler" Grid.Column="0" Grid.Row="0" Click="testBttn_Click">Hej</Button>
+        <ContentControl Content="{Binding}" Margin="0,0,0,0.5" Grid.RowSpan="2" Grid.ColumnSpan="2"></ContentControl>
     </Grid>
 </Window>

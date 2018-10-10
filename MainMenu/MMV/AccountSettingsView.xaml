@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:MainMenu"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+
+
+
+
+    <Grid Background="Aqua">
     </Grid>
 </UserControl>
