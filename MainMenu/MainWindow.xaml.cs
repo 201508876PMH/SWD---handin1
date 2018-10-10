@@ -35,7 +35,7 @@ namespace MainMenu
 
         private void something(object sender, RoutedEventArgs e)
         {
-            DataContext = new AddGroupViewModel();
+            DataContext = new AddMemberViewModel();
         }
     }
 }

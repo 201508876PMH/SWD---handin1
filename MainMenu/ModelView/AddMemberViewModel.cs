@@ -6,12 +6,9 @@ namespace MainMenu.ModelView
     /// <summary>
     /// Interaction logic for AddMemberView.xaml
     /// </summary>
-    public partial class AddMemberViewModel : UserControl
+    public class AddMemberViewModel : UserControl
     {
-        public AddMemberViewModel()
-        {
-            InitializeComponent();
-        }
+        
 
     }
 }
