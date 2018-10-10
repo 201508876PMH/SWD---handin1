@@ -90,7 +90,7 @@
                 </Style>
             </TextBox.Style>
         </TextBox>
-        <ContentControl Content="{Binding}" Margin="0,0,0,0.5" Grid.RowSpan="3" Grid.ColumnSpan="3" FontSize="8"></ContentControl>
+        <ContentControl Content="{Binding}" Margin="0,4,-0.4,-4" Grid.RowSpan="3" Grid.ColumnSpan="3" FontSize="8"></ContentControl>
 
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">

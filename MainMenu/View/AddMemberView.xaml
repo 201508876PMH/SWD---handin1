@@ -12,29 +12,51 @@
             <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
 
-        <TextBox Grid.Row="0" FontSize="20" >
+        <TextBox Grid.Row="0" FontSize="16">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                     <Style.Resources>
                         <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                             <VisualBrush.Visual>
-                                <Label Content="Search" Foreground="LightGray" />
+                                <Label Content="Search" FontSize="16" Foreground="LightGray" />
                             </VisualBrush.Visual>
                         </VisualBrush>
                     </Style.Resources>
                     <Style.Triggers>
                         <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
                             <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            <Setter Property="Margin" Value="5"></Setter>
                         </Trigger>
                         <Trigger Property="Text" Value="{x:Null}">
                             <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            <Setter Property="Margin" Value="5"></Setter>
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
                             <Setter Property="Background" Value="White" />
+                            <Setter Property="Margin" Value="5"></Setter>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
             </TextBox.Style>
         </TextBox>
+
+
+
+        <ItemsControl Grid.Row="1" Name="PersonAddToGroupList">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock />
+                        <Button HorizontalAlignment="Right" Height="10" Width="20" Content="Add Person" />
+
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
     </Grid>
 </UserControl>
