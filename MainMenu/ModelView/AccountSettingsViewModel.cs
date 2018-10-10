@@ -69,7 +69,7 @@ namespace MainMenu.ModelView
             }
         }
 
-        private ICommand _saveCommand;
+        ICommand _saveCommand;
 
         public ICommand SaveCommand
         {
@@ -80,7 +80,6 @@ namespace MainMenu.ModelView
         {
             var values = (object[]) parameter;
 
-            
             //_currentUserAccount.Email = values[1].ToString();
             //_currentUserAccount.Password = values[3].ToString();
 
