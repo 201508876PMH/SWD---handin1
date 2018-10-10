@@ -9,7 +9,7 @@
 
 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="UMU, UniMeetUp" Height="550" Width="1100">
 
 
     <!--<Window.Resources>
@@ -24,17 +24,90 @@
     </Window.Resources>
 
 
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="268*"/>
-            <ColumnDefinition Width="527*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="615*"/>
+            <ColumnDefinition Width="31*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="112*"/>
-            <RowDefinition Height="311*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
 
-        <Button Name="EventHandler" Grid.Column="0" Grid.Row="0" Click="testBttn_Click">Hej</Button>
-        <ContentControl Content="{Binding}" Margin="0,0,0,0.5" Grid.RowSpan="2" Grid.ColumnSpan="2"></ContentControl>
+            <Label Grid.Column="0" Grid.Row="0" FontSize="16">Groups:</Label>
+
+            <Viewbox Grid.Column="1" Grid.Row="0" MaxHeight="25" >
+
+                <Frame Source="images/AddOnlineVersion_16x.xaml" />
+
+            </Viewbox>
+
+            <Separator Grid.Column="0" Grid.Row="1" VerticalAlignment="Top"/>
+
+            <TextBlock Grid.Column="0" Grid.Row="2" FontSize="16">placeholder1</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="3" FontSize="16">placeholder2</TextBlock>
+
+        </Grid>
+
+        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Hej</Button>
+        <TextBox Grid.Column="0" Grid.Row="0" FontSize="16">
+            <TextBox.Style>
+                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    <Style.Resources>
+                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                            <VisualBrush.Visual>
+                                <Label Content="Search" FontSize="16" Foreground="LightGray" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            <Setter Property="Margin" Value="5"></Setter>
+                        </Trigger>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            <Setter Property="Margin" Value="5"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="Margin" Value="5"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <ContentControl Content="{Binding}" Margin="0,0,0,0.5" Grid.RowSpan="3" Grid.ColumnSpan="3" FontSize="8"></ContentControl>
+
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type ListBox}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type Separator}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </Grid.Resources>
     </Grid>
 </Window>
