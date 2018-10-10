@@ -24,5 +24,10 @@ namespace MainMenu
         {
             InitializeComponent();
         }
+
+        private void ActivateAccountSettings_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
