@@ -8,13 +8,14 @@ using System.Windows.Controls;
 namespace MainMenu.View
 {
     /// <summary>
-    /// Interaction logic for AccountSettingsView.xaml
+    /// Interaction logic for AddMemberView.xaml
     /// </summary>
-    public partial class AccountSettingsView : UserControl
+    public partial class AddMemberView : UserControl
     {
-        public AccountSettingsView()
+        public AddMemberView()
         {
             InitializeComponent();
         }
+        
     }
 }

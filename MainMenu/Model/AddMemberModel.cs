@@ -9,7 +9,7 @@ using MainMenu.Annotations;
 
 namespace MainMenu.Model
 {
-    public class GroupModel : INotifyPropertyChanged
+    public class AddMemberModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
