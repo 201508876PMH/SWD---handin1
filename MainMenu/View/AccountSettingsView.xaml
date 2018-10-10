@@ -38,7 +38,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
         <StackPanel Name="ChangeUsernameLabelsPanel" Grid.Column="0" Grid.Row="0">
             <Label Name="UsernameLabel" Content="Username:"></Label>
             <Label Name="EmailLabel" Content="Email:"></Label>
@@ -210,12 +209,12 @@
         </StackPanel>
 
         <StackPanel Name="LogoutAndDeleteBtnPanel" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button Name="LogoutBtn" Content="Logout" Click="LogoutBtn_OnClick"></Button>
-            <Button Name="DeleteBtn" Content="Delete Account" Click="DeleteBtn_OnClick"></Button>
+            <Button Name="LogoutBtn" Content="Logout"></Button>
+            <Button Name="DeleteBtn" Content="Delete Account"></Button>
         </StackPanel>
 
         <StackPanel Name="SaveBtnPanel" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Name="SaveBtn" Content="Save" Click="SaveBtn_OnClick"></Button>
+            <Button Name="SaveBtn" Content="Save"></Button>
         </StackPanel>
 
     </Grid>
