@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MainMenu
+namespace MainMenu.Model
 {
-    /// <summary>
-    /// Interaction logic for AccountSettingsView.xaml
-    /// </summary>
-    public partial class AccountSettingsView : UserControl
+
+    public class AccountSettingsModel
     {
-        public AccountSettingsView()
+        public bool Check_if_username_is_the_same(string currentUsername)
         {
-            InitializeComponent();
+            return true;
+        }
+
+        public bool Check_if_emails_are_identical(string Email)
+        {
+            return true;
         }
 
     }

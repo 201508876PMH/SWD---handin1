@@ -22,7 +22,7 @@
         </Style>
         <Style TargetType="{x:Type Label}">
             <Style.Setters>
-                <Setter Property="Margin" Value=""></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
             </Style.Setters>
         </Style>
     </UserControl.Resources>
