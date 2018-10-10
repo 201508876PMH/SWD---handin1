@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\RelayCommand.cs" />
     <Compile Include="ModelView\AddGroupViewModel.cs" />
     <Page Include="View\AccountSettingsView.xaml">
       <SubType>Designer</SubType>
@@ -80,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModelView\AccountSettingsViewModel.cs" />
+    <Compile Include="Model\GroupModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,7 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
