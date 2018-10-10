@@ -12,12 +12,17 @@ namespace MainMenu.Model
     {
 
 
-        public bool Check_if_username_is_the_same(string currentUsername)
+        public bool Check_if_username_is_the_same(string currentUsername, string newUsername)
         {
             return true;
         }
 
-        public bool Check_if_emails_are_identical(string email)
+        //public bool Check_if_email_is_registered_to_user(string email)
+        //{
+        //    return true;
+        //}
+
+        public bool Check_if_emails_are_identical(string email, string repeatedEmail)
         {
             return true;
         }

@@ -67,7 +67,7 @@
 
         <StackPanel Name="ChangeUsernameTextBoxPanel" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" MinWidth="120">
 
-            <TextBox Name="UsernameTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Username}">
+            <TextBox Name="UsernameTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Username}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -92,7 +92,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="EmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Email}">
+            <TextBox Name="EmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Email}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -117,7 +117,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="RepeatEmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Email}">
+            <TextBox Name="RepeatEmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Email}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -154,7 +154,7 @@
 
         <StackPanel Name="ChangePasswordTextBoxPanel" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" MinWidth="120">
 
-            <TextBox Name="CurrentPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Password}">
+            <TextBox Name="CurrentPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -179,7 +179,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="NewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Password}">
+            <TextBox Name="NewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
@@ -204,7 +204,7 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="RepeatNewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource UserAccount}" Text="{Binding Password}">
+            <TextBox Name="RepeatNewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>

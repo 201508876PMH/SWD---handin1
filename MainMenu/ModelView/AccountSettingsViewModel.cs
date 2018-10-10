@@ -24,6 +24,12 @@ namespace MainMenu.ModelView
             _currentUserAccount.Password = "ThisShouldBeConfidential123";
         }
 
+        public AccountSettingsViewModel(UserAccount currentUserAccount, AccountSettingsModel accountSettingsModel)
+        {
+            _currentUserAccount = currentUserAccount;
+            _accountSettingsModel = accountSettingsModel;
+        }
+
         public UserAccount UserAccount
         {
             get => _currentUserAccount;
@@ -67,9 +73,32 @@ namespace MainMenu.ModelView
 
         public ICommand SaveCommand
         {
-            get
+            get { return _saveCommand ?? (_saveCommand = new RelayCommand<object>(Save_OnClick)); }
+        }
+
+        public void Save_OnClick(object parameter)
+        {
+            var values = (object[]) parameter;
+
+            
+            //_currentUserAccount.Email = values[1].ToString();
+            //_currentUserAccount.Password = values[3].ToString();
+
+            var new_username = values[0].ToString();
+            var current_email = values[1].ToString();
+            var repeated_email = values[2].ToString();
+            var current_password = values[3].ToString();
+            var new_password = values[4].ToString();
+            var repeated__new_password = values[5].ToString();
+            
+            if (_accountSettingsModel.Check_if_username_is_the_same(_currentUserAccount.Username, new_username) &&
+                _accountSettingsModel.Check_if_emails_are_identical(_currentUserAccount.Email, repeated_email))
             {
-                return _saveCommand
+                _currentUserAccount.Username = values[0].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Some error message");
             }
         }
 
