@@ -58,8 +58,8 @@
 
         </Grid>
 
-        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Anton</Button>
-        <Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>
+        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">AccountSettings</Button>
+        <Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">AddMember</Button>
         <TextBox Grid.Column="0" Grid.Row="0" FontSize="16">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
