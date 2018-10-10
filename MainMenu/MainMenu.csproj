@@ -57,7 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="classes\GroupSettings.cs" />
     <Compile Include="classes\RelayCommand.cs" />
-    <Compile Include="ModelView\AddGroupViewModel.cs" />
+    <Compile Include="ModelView\AddMemberViewModel.cs" />
     <Compile Include="View\AccountSettingsView.xaml.cs">
       <DependentUpon>AccountSettingsView.xaml</DependentUpon>
     </Compile>
@@ -91,7 +91,7 @@
     <Compile Include="ModelView\AccountSettingsViewModel.cs" />
     <Compile Include="ModelView\ViewModelCore.cs" />
     <Compile Include="Model\AccountSettingsModel.cs" />
-    <Compile Include="Model\GroupModel.cs" />
+    <Compile Include="Model\AddMemberModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

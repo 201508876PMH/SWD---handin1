@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainMenu.classes
 {
-    public class GroupSettings
+    public class AddMemberSettings
     {
     }
 }

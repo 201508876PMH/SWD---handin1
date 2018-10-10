@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MainMenu
+namespace MainMenu.Model
 {
     /// <summary>
     /// Interaction logic for AccountSettingsView.xaml
     /// </summary>
-    public partial class AccountSettingsView : UserControl
+    public partial class AccountSettingsModel : UserControl
     {
         public AccountSettingsView()
         {

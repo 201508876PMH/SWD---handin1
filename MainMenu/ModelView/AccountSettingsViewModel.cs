@@ -6,7 +6,7 @@ using MainMenu.ModelView;
 
 namespace MainMenu.ModelView
 {
-    public class AccountSettingsView : ViewModelCore
+    public class AccountSettingsViewModel : ViewModelCore
     {
 
 
