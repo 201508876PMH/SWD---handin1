@@ -5,21 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainMenu"
         xmlns:classes="clr-namespace:MainMenu.classes"
-        xmlns:MMV="clr-namespace:MainMenu"
-
-
+        xmlns:ModelView="clr-namespace:MainMenu"
+        xmlns:view="clr-namespace:MainMenu.View"
         mc:Ignorable="d"
         Title="UMU, UniMeetUp" Height="550" Width="1100">
 
-
-    <!--<Window.Resources>
-        <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
-            <MMV:AccountSettingsView DataContext="{Binding}"></MMV:AccountSettingsView>
-        </DataTemplate>
-    </Window.Resources>-->
     <Window.Resources>
-        <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
-            <MMV:AccountSettingsViewModel  DataContext="{Binding}"></MMV:AccountSettingsViewModel>
+        <DataTemplate x:Name="groupSettingsTemplate" DataType="{x:Type classes:GroupSettings}">
+            <view:A DataContext="{Binding}"></view:A>
+        </DataTemplate>
+
+        <DataTemplate x:Name="AccountSettingsTemplate" DataType="{x:Type classes:AccountSettings}">
+            <view:AccountSettingsViewModel DataContext="{Binding}"></view:AccountSettingsViewModel>
         </DataTemplate>
     </Window.Resources>
 
@@ -62,7 +59,8 @@
 
         </Grid>
 
-        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Hej</Button>
+        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Anton</Button>
+        <Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>
         <TextBox Grid.Column="0" Grid.Row="0" FontSize="16">
             <TextBox.Style>
                 <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">

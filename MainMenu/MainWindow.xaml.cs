@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using MainMenu.ModelView;
+
+
 namespace MainMenu
 {
     /// <summary>
@@ -30,6 +33,9 @@ namespace MainMenu
             DataContext = new AccountSettingsViewModel();
         }
 
-
+        private void something(object sender, RoutedEventArgs e)
+        {
+            DataContext = new AddGroupViewModel();
+        }
     }
 }
