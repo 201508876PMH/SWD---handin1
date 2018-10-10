@@ -8,7 +8,7 @@ namespace MainMenu.ModelView
 {
     public class AccountSettingsViewModel : ViewModelCore
     {
-
+        
 
     }
     
