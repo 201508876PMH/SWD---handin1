@@ -12,7 +12,7 @@ namespace MainMenu.Model
     {
 
 
-        public bool Check_if_username_is_the_same(string currentUsername, string newUsername)
+        public bool Check_if_usernames_are_not_the_same(string currentUsername, string newUsername)
         {
             if (currentUsername != newUsername)
             {
@@ -29,7 +29,12 @@ namespace MainMenu.Model
 
         public bool Check_if_emails_are_identical(string email, string repeatedEmail)
         {
-            return email == repeatedEmail;
+            if (email == repeatedEmail)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool Check_if_current_password_matches_in_DB(string password)
