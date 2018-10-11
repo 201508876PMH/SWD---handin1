@@ -43,7 +43,7 @@
         <StackPanel Name="ChangeUsernameLabelsPanel" Grid.Column="0" Grid.Row="0">
             <Label Name="UsernameLabel" Content="Username:"></Label>
             <Label Name="EmailLabel" Content="Email:"></Label>
-            <Label Name="RepeatEmailLabel" Content="Repeat Email:"></Label>
+            <Label Name="ConfirmEmailLabel" Content="Confirm Email:"></Label>
         </StackPanel>
 
         <StackPanel Name="ChangeUsernameTextBoxPanel" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" MinWidth="120">
@@ -98,13 +98,13 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="RepeatEmailTextBox" Margin="4">
+            <TextBox Name="ConfirmEmailTextBox" Margin="4">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Repeat email" Foreground="LightGray" />
+                                    <Label Content="Confirm email" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -220,4 +220,5 @@
         </StackPanel>
 
     </Grid>
+
 </UserControl>
