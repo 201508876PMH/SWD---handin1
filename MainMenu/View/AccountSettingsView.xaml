@@ -5,17 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MainMenu"
              xmlns:classes="clr-namespace:MainMenu.classes"
-             xmlns:ModelView="clr-namespace:MainMenu.ModelView"
-             xmlns:Model="clr-namespace:MainMenu.Model"
-             xmlns:View="clr-namespace:MainMenu.View"
+             xmlns:modelView="clr-namespace:MainMenu.ModelView"
+             xmlns:model="clr-namespace:MainMenu.Model"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
 
-        <Model:UserAccount x:Key="UserAccount"/>
-        <Model:AccountSettingsModel x:Key="AccountSettingsModel"/>
-        <ModelView:AccountSettingsViewModel x:Key="AccountSettingsViewModel"/>
+        <modelView:AccountSettingsViewModel x:Key="AccountSettingsViewModel"/>
 
         <Style TargetType="{x:Type Button}">
             <Style.Setters>
