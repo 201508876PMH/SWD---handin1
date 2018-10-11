@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\Converter.cs" />
     <Compile Include="classes\RelayCommand.cs" />
     <Compile Include="Model\UserAccount.cs" />
     <Compile Include="ModelView\AddMemberViewModel.cs" />

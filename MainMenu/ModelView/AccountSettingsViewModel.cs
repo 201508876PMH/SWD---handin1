@@ -11,8 +11,8 @@ namespace MainMenu.ModelView
 {
     public class AccountSettingsViewModel : ViewModelCore
     {
-        private UserAccount _currentUserAccount;
-        private readonly AccountSettingsModel _accountSettingsModel;
+        public UserAccount _currentUserAccount;
+        public AccountSettingsModel _accountSettingsModel;
 
         public AccountSettingsViewModel()
         {
@@ -35,7 +35,7 @@ namespace MainMenu.ModelView
             get => _currentUserAccount;
             set => _currentUserAccount = value;
         }
-
+        
         public string Username
         {
             get => _currentUserAccount.Username;
@@ -71,10 +71,7 @@ namespace MainMenu.ModelView
 
         ICommand _saveCommand;
 
-        public ICommand SaveCommand
-        {
-            get { return _saveCommand ?? (_saveCommand = new RelayCommand<object>(Save_OnClick)); }
-        }
+        public ICommand SaveCommand => _saveCommand ?? (_saveCommand = new RelayCommand<object>(Save_OnClick));
 
         public void Save_OnClick(object parameter)
         {
@@ -90,10 +87,11 @@ namespace MainMenu.ModelView
             var new_password = values[4].ToString();
             var repeated__new_password = values[5].ToString();
             
-            if (_accountSettingsModel.Check_if_username_is_the_same(_currentUserAccount.Username, new_username) &&
+            if (_accountSettingsModel.Check_if_username_is_the_same(_currentUserAccount.Username, new_username) ||
                 _accountSettingsModel.Check_if_emails_are_identical(_currentUserAccount.Email, repeated_email))
             {
-                _currentUserAccount.Username = values[0].ToString();
+                _currentUserAccount.Username = new_username;
+                RaisePropertyChanged("Username");
             }
             else
             {

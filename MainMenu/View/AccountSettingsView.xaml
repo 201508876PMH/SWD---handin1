@@ -13,6 +13,8 @@
     <UserControl.Resources>
 
         <modelView:AccountSettingsViewModel x:Key="AccountSettingsViewModel"/>
+        <model:UserAccount x:Key="UserAccount"/>
+        <classes:Converter x:Key="Converter"/>
 
         <Style TargetType="{x:Type Button}">
             <Style.Setters>
@@ -234,7 +236,18 @@
         </StackPanel>
 
         <StackPanel Name="SaveBtnPanel" Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Name="SaveBtn" Content="Save" DataContext="{StaticResource AccountSettingsViewModel}" Command="{Binding SaveCommand}"></Button>
+            <Button Name="SaveBtn" Content="Save" DataContext="{StaticResource AccountSettingsViewModel}" Command="{Binding SaveCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource Converter}">
+                        <Binding Path="Text" ElementName="UsernameTextBox"></Binding>
+                        <Binding Path="Text" ElementName="EmailTextBox"></Binding>
+                        <Binding Path="Text" ElementName="RepeatEmailTextBox"></Binding>
+                        <Binding Path="Text" ElementName="CurrentPasswordTextBox"></Binding>
+                        <Binding Path="Text" ElementName="NewPasswordTextBox"></Binding>
+                        <Binding Path="Text" ElementName="RepeatNewPasswordTextBox"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
         </StackPanel>
     
     </Grid>
