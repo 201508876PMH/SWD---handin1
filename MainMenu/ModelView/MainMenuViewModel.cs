@@ -35,7 +35,7 @@ namespace MainMenu.ModelView
         }
         public void changeWindowToAccountSettingsCommandExe()
         {
-            _iNavigationService.showView(new AccountSettingsView());
+            _iNavigationService.ShowView(new AccountSettingsView());
         }
         // Account Settings window
 

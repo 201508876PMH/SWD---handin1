@@ -85,8 +85,8 @@
 
         </Grid>
 
-        <Button Grid.Row="0" Grid.Column="1" Command="{Binding changeWindowToAccountSettingsCommand}">Switch to AccountSettings</Button>
-        <Button Grid.Row="0" Grid.Column="2" Command="{Binding changeWindowToAddMember}">Switch to AddMember</Button>
+        <Button Grid.Row="0" Grid.Column="1" DataContext="{StaticResource MainMenuViewModel}" Command="{Binding changeWindowToAccountSettingsCommand}">Switch to AccountSettings</Button>
+        <Button Grid.Row="0" Grid.Column="2" DataContext="{StaticResource MainMenuViewModel}" Command="{Binding changeWindowToAddMember}">Switch to AddMember</Button>
 
 
         <!--<Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>-->

@@ -27,7 +27,7 @@ namespace MainMenu
         public MainWindow()
         {
             InitializeComponent();
-            //DataContext = new MainMenuViewModel(new classes.NavigationService());
+            
         }
 
        
