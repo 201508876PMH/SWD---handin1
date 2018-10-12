@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using MainMenu.classes;
 using MainMenu.ModelView;
 using MainMenu.View;
 
@@ -21,22 +21,15 @@ namespace MainMenu
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    /// </summary>v
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainMenuViewModel(new classes.NavigationService());
         }
 
-        private void testBttn_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new AccountSettingsView();
-        }
-
-        private void something(object sender, RoutedEventArgs e)
-        {
-            DataContext = new AddMemberView();
-        }
+       
     }
 }

@@ -56,7 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="classes\Converter.cs" />
+    <Compile Include="classes\NavigationService.cs" />
     <Compile Include="classes\RelayCommand.cs" />
+    <Compile Include="Interfaces\INavigationService.cs" />
+    <Compile Include="ModelView\MainMenuViewModel.cs" />
     <Compile Include="Model\UserAccount.cs" />
     <Compile Include="ModelView\AddMemberViewModel.cs" />
     <Compile Include="View\AccountSettingsView.xaml.cs">
