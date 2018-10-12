@@ -7,9 +7,9 @@ using System.Windows.Controls;
 
 namespace MainMenu.Interfaces
 {
-    interface INavigationService
+    public interface INavigationService
     {
         // The 'showView' method take a UserControl object type argument, reason our views implement UserControl
-        void showView(UserControl view);
+        void ShowView(UserControl view);
     }
 }

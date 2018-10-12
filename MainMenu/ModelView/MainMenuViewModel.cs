@@ -11,10 +11,15 @@ using MainMenu.View;
 
 namespace MainMenu.ModelView
 {
-    class MainMenuViewModel : ViewModelCore
+    public class MainMenuViewModel : ViewModelCore
     {
         private INavigationService _iNavigationService;
         private ICommand _iCommandChangeWindowToAccountSettings;
+
+        public MainMenuViewModel()
+        {
+            _iNavigationService = new NavigationService();
+        }
 
         public MainMenuViewModel(INavigationService InavigationService)
         {
@@ -22,14 +27,11 @@ namespace MainMenu.ModelView
 
         }
 
-        public ICommand changeWindowToAccountSettingsCommand
-        {
-            get { return _iCommandChangeWindowToAccountSettings ?? (_iCommandChangeWindowToAccountSettings = new RelayCommand(changeWindowToAccountSettingsCommandExe)); }
-        }
+        public ICommand changeWindowToAccountSettingsCommand => _iCommandChangeWindowToAccountSettings ?? (_iCommandChangeWindowToAccountSettings = new RelayCommand(changeWindowToAccountSettingsCommandExe));
 
         public void changeWindowToAccountSettingsCommandExe()
         {
-            _iNavigationService.showView(new AddMemberView());
+            _iNavigationService.ShowView(new AddMemberView());
         }
     }
 }

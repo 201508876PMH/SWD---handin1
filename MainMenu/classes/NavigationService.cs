@@ -11,7 +11,7 @@ namespace MainMenu.classes
 {
     class NavigationService : INavigationService
     {
-        public void showView(UserControl view)
+        public void ShowView(UserControl view)
         {
             System.Windows.Application.Current.MainWindow.DataContext = view;
            

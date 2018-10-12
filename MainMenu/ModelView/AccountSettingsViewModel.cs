@@ -95,8 +95,9 @@ namespace MainMenu.ModelView
             }
             else
             {
-                MessageBox.Show("Some error message");
+                Console.WriteLine("Something didn't match");
             }
+            
         }
 
     }

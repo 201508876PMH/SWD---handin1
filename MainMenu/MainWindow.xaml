@@ -6,12 +6,14 @@
         xmlns:local="clr-namespace:MainMenu"
         xmlns:view="clr-namespace:MainMenu.View"
         xmlns:modelView="clr-namespace:MainMenu.ModelView"
-
-
         mc:Ignorable="d"
         Title="UMU, UniMeetUp" Height="550" Width="1100">
 
-    <!--<Window.Resources>
+    <Window.Resources>
+
+        <local:MainWindow x:Key="MainWindow"/>
+        <modelView:MainMenuViewModel x:Key="MainMenuViewModel"/>
+
         <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type modelView:AccountSettingsViewModel}">
             <view:AccountSettingsView DataContext="{Binding}"></view:AccountSettingsView>
         </DataTemplate>
@@ -19,7 +21,7 @@
         <DataTemplate x:Name="addMemberSettingsTemplate" DataType="{x:Type modelView:AddMemberViewModel}">
             <view:AddMemberView DataContext="{Binding}"></view:AddMemberView>
         </DataTemplate>
-    </Window.Resources>-->
+    </Window.Resources>
 
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
@@ -83,7 +85,7 @@
 
         </Grid>
 
-        <Button Grid.Row="0" Grid.Column="1" Command="{Binding changeWindowToAccountSettingsCommand}">Switch to AccountSettings</Button>
+        <Button Grid.Row="0" Grid.Column="1" DataContext="{StaticResource MainMenuViewModel}" Command="{Binding changeWindowToAccountSettingsCommand}">Switch to AccountSettings</Button>
 
 
         <!--<Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>-->
