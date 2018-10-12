@@ -5,29 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MainMenu"
              xmlns:classes="clr-namespace:MainMenu.classes"
-             xmlns:View="clr-namespace:MainMenu.View"
+             xmlns:modelView="clr-namespace:MainMenu.ModelView"
+             xmlns:model="clr-namespace:MainMenu.Model"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
+
+        <modelView:AccountSettingsViewModel x:Key="AccountSettingsViewModel"/>
+        <model:UserAccount x:Key="UserAccount"/>
+        <classes:Converter x:Key="Converter"/>
+
         <Style TargetType="{x:Type Button}">
             <Style.Setters>
                 <Setter Property="Margin" Value="4"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
             </Style.Setters>
         </Style>
-        <Style TargetType="{x:Type TextBox}">
+        <!--<Style TargetType="{x:Type TextBox}">
             <Style.Setters>
                 <Setter Property="Margin" Value="4"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
             </Style.Setters>
-        </Style>
+        </Style>-->
         <Style TargetType="{x:Type Label}">
             <Style.Setters>
                 <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
             </Style.Setters>
         </Style>
     </UserControl.Resources>
 
-    <Grid Background="White" ShowGridLines="True">
+    <Grid Name="MainGrid" Background="White" ShowGridLines="True">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -38,23 +47,32 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Name="ChangeUsernameLabelsPanel" Grid.Column="0" Grid.Row="0">
-            <Label Name="UsernameLabel" Content="Username:"></Label>
+        <StackPanel Name="TestPanel" Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Label Name="TestLabel" Grid.Column="1" Grid.Row="0" Content="Logged ind as:"/>
+            <Label Name="TestUsernameLabel" Grid.Column="1" Grid.Row="0" DataContext="{StaticResource AccountSettingsViewModel}" Content="{Binding Username}"/>
+        </StackPanel>
+        
+        <Label Name="ChangeUsernameHeadlineLabel" Grid.Column="0" Grid.Row="0" Content="Change username:" FontSize="20" FontWeight="ExtraLight"/>
+
+        <StackPanel Name="ChangeUsernameLabelsPanel" Grid.Column="0" Grid.Row="1">
+            <Label Name="UsernameLabel" Content="New username:"></Label>
             <Label Name="EmailLabel" Content="Email:"></Label>
             <Label Name="RepeatEmailLabel" Content="Repeat Email:"></Label>
         </StackPanel>
 
-        <StackPanel Name="ChangeUsernameTextBoxPanel" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" MinWidth="120">
+        <StackPanel Name="ChangeUsernameTextBoxPanel" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" MinWidth="120">
 
-            <TextBox Name="UsernameTextBox" Margin="4">
+            <TextBox Name="UsernameTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Username}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Username" Foreground="LightGray"/>
+                                    <Label Content="Username" FontSize="12" Foreground="LightGray"/>
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -73,13 +91,13 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="EmailTextBox" Margin="4">
+            <TextBox Name="EmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Email}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Email" Foreground="LightGray" />
+                                    <Label Content="Email" FontSize="12" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -98,13 +116,13 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="RepeatEmailTextBox" Margin="4">
+            <TextBox Name="RepeatEmailTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Email}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Repeat email" Foreground="LightGray" />
+                                    <Label Content="Repeat email" FontSize="12" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -125,21 +143,23 @@
 
         </StackPanel>
 
-        <StackPanel Name="ChangePasswordLabelsPanel" Grid.Column="0" Grid.Row="1">
+        <Label Name="ChangePasswordHeadlineLabel" Grid.Column="0" Grid.Row="2" Content="Change password:" FontSize="20" FontWeight="ExtraLight"/>
+
+        <StackPanel Name="ChangePasswordLabelsPanel" Grid.Column="0" Grid.Row="3">
             <Label Name="CurrentPasswordLabel" Content="Current password:"></Label>
             <Label Name="NewPasswordLabel" Content="New password:"></Label>
             <Label Name="RepeatNewPasswordLabel" Content="Repeat new password:"></Label>
         </StackPanel>
 
-        <StackPanel Name="ChangePasswordTextBoxPanel" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" MinWidth="120">
+        <StackPanel Name="ChangePasswordTextBoxPanel" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" MinWidth="120">
 
-            <TextBox Name="CurrentPasswordTextBox" Margin="4">
+            <TextBox Name="CurrentPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Current password" Foreground="LightGray" />
+                                    <Label Content="Current password" FontSize="12" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -158,13 +178,13 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="NewPasswordTextBox" Margin="4">
+            <TextBox Name="NewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="New password" Foreground="LightGray" />
+                                    <Label Content="New password" FontSize="12" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -183,13 +203,13 @@
                 </TextBox.Style>
             </TextBox>
 
-            <TextBox Name="RepeatNewPasswordTextBox" Margin="4">
+            <TextBox Name="RepeatNewPasswordTextBox" Margin="4" FontSize="14" DataContext="{StaticResource AccountSettingsViewModel}" Text="{Binding Password}">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
                         <Style.Resources>
                             <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
                                 <VisualBrush.Visual>
-                                    <Label Content="Repeat password" Foreground="LightGray" />
+                                    <Label Content="Repeat password" FontSize="12" Foreground="LightGray" />
                                 </VisualBrush.Visual>
                             </VisualBrush>
                         </Style.Resources>
@@ -210,14 +230,26 @@
 
         </StackPanel>
 
-        <StackPanel Name="LogoutAndDeleteBtnPanel" Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <Button Name="LogoutBtn" Content="Logout"></Button>
-            <Button Name="DeleteBtn" Content="Delete Account"></Button>
+        <StackPanel Name="LogoutAndDeleteBtnPanel" Grid.Column="0" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <Button Name="LogoutBtn" Content="Logout" DataContext="{StaticResource AccountSettingsViewModel}" Command="{Binding LogoutCommand}"></Button>
+            <Button Name="DeleteBtn" Content="Delete Account" DataContext="{StaticResource AccountSettingsViewModel}" Command="{Binding DeleteCommand}"></Button>
         </StackPanel>
 
-        <StackPanel Name="SaveBtnPanel" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button Name="SaveBtn" Content="Save"></Button>
+        <StackPanel Name="SaveBtnPanel" Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Name="SaveBtn" Content="Save" DataContext="{StaticResource AccountSettingsViewModel}" Command="{Binding SaveCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource Converter}">
+                        <Binding Path="Text" ElementName="UsernameTextBox"></Binding>
+                        <Binding Path="Text" ElementName="EmailTextBox"></Binding>
+                        <Binding Path="Text" ElementName="RepeatEmailTextBox"></Binding>
+                        <Binding Path="Text" ElementName="CurrentPasswordTextBox"></Binding>
+                        <Binding Path="Text" ElementName="NewPasswordTextBox"></Binding>
+                        <Binding Path="Text" ElementName="RepeatNewPasswordTextBox"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
         </StackPanel>
-
+    
     </Grid>
+
 </UserControl>
