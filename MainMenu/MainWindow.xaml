@@ -31,7 +31,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Grid.Row="1">
+        <Grid Grid.Column="0" Grid.Row="1" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
@@ -41,52 +41,86 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Viewbox MaxHeight="25" >
+                    <Frame Source="Resources/AddOnlineVersion_16x.xaml" />
+                </Viewbox>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Viewbox MaxHeight="25" >
+                    <Frame Source="Resources/Ellipsis_16x.xaml" />
+                </Viewbox>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Viewbox MaxHeight="25" >
+                    <Frame Source="Resources/Ellipsis_16x.xaml" />
+                </Viewbox>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Viewbox MaxHeight="25" >
+                    <Frame Source="Resources/Ellipsis_16x.xaml" />
+                </Viewbox>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Viewbox MaxHeight="25" >
+                    <Frame Source="Resources/Ellipsis_16x.xaml" />
+                </Viewbox>
+            </StackPanel>
+
 
             <Label Grid.Column="0" Grid.Row="0" FontSize="16">Groups:</Label>
 
-            <Viewbox Grid.Column="1" Grid.Row="0" MaxHeight="25" >
-
-                <Frame Source="Resources/AddOnlineVersion_16x.xaml" />
-
-            </Viewbox>
+            
 
             <Separator Grid.Column="0" Grid.Row="1" VerticalAlignment="Top"/>
 
             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="16">placeholder1</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="3" FontSize="16">placeholder2</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="4" FontSize="16">placeholder3</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="5" FontSize="16">placeholder4</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="6" FontSize="16">placeholder5</TextBlock>
 
         </Grid>
 
         <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Anton</Button>
         <Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>
-        <TextBox Grid.Column="0" Grid.Row="0" FontSize="16">
-            <TextBox.Style>
-                <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-                    <Style.Resources>
-                        <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
-                            <VisualBrush.Visual>
-                                <Label Content="Search" FontSize="16" Foreground="LightGray" />
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </Style.Resources>
-                    <Style.Triggers>
-                        <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            <Setter Property="Margin" Value="5"></Setter>
-                        </Trigger>
-                        <Trigger Property="Text" Value="{x:Null}">
-                            <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
-                            <Setter Property="Margin" Value="5"></Setter>
-                        </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter Property="Background" Value="White" />
-                            <Setter Property="Margin" Value="5"></Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBox Grid.Column="0" Grid.Row="0" FontSize="16" MinWidth="150">
+                <TextBox.Style>
+                    <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="Search..." FontSize="16" Foreground="LightGray" />
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                <Setter Property="Margin" Value="5"></Setter>
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                                <Setter Property="Margin" Value="5"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                                <Setter Property="Margin" Value="5"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <Viewbox MaxHeight="25" >
+                <Frame Source="Resources/KPIBrowserView_16x.xaml" />
+            </Viewbox>
+        </StackPanel>
+        
         <ContentControl Content="{Binding}" Margin="0,0,0,0.5"  Grid.Row="1" Grid.Column="1" FontSize="8"></ContentControl>
 
         <Grid.Resources>
@@ -103,6 +137,9 @@
                 <Setter Property="Margin" Value="5"/>
             </Style>
             <Style TargetType="{x:Type Separator}">
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+            <Style TargetType="{x:Type StackPanel}">
                 <Setter Property="Margin" Value="5"/>
             </Style>
         </Grid.Resources>
