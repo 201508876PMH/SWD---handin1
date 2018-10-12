@@ -11,7 +11,7 @@
         mc:Ignorable="d"
         Title="UMU, UniMeetUp" Height="550" Width="1100">
 
-    <Window.Resources>
+    <!--<Window.Resources>
         <DataTemplate x:Name="accountSettingsTemplate" DataType="{x:Type modelView:AccountSettingsViewModel}">
             <view:AccountSettingsView DataContext="{Binding}"></view:AccountSettingsView>
         </DataTemplate>
@@ -19,7 +19,7 @@
         <DataTemplate x:Name="addMemberSettingsTemplate" DataType="{x:Type modelView:AddMemberViewModel}">
             <view:AddMemberView DataContext="{Binding}"></view:AddMemberView>
         </DataTemplate>
-    </Window.Resources>
+    </Window.Resources>-->
 
     <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
@@ -73,9 +73,6 @@
 
 
             <Label Grid.Column="0" Grid.Row="0" FontSize="16">Groups:</Label>
-
-
-
             <Separator Grid.Column="0" Grid.Row="1" VerticalAlignment="Top"/>
 
             <TextBlock Grid.Column="0" Grid.Row="2" FontSize="16">placeholder1</TextBlock>
@@ -86,9 +83,11 @@
 
         </Grid>
 
-        <Button Name="EventHandler" Grid.Column="1" Grid.Row="0" Click="testBttn_Click">Anton</Button>
-        <Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>
-        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button Grid.Row="0" Grid.Column="1" Command="{Binding changeWindowToAccountSettingsCommand}">Switch to AccountSettings</Button>
+
+
+        <!--<Button Name="EventHandler1" Grid.Column="2" Grid.Row="0" Click="something">Rasmus</Button>-->
+        <!--<StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
             <TextBox Grid.Column="0" Grid.Row="0" FontSize="16" MinWidth="150">
                 <TextBox.Style>
                     <Style TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
@@ -119,9 +118,9 @@
             <Viewbox MaxHeight="25" >
                 <Frame Source="Resources/KPIBrowserView_16x.xaml" />
             </Viewbox>
-        </StackPanel>
+        </StackPanel>-->
 
-        <ContentControl Content="{Binding}" Margin="0,0,0,0.5"  Grid.Row="1" Grid.Column="1" FontSize="8"></ContentControl>
+        <ContentControl Content="{Binding}" Margin="0,0,0,0.5"  Grid.Row="1" Grid.Column="1"></ContentControl>
 
         <Grid.Resources>
             <Style TargetType="{x:Type TextBox}">
@@ -144,4 +143,6 @@
             </Style>
         </Grid.Resources>
     </Grid>
+
+
 </Window>
