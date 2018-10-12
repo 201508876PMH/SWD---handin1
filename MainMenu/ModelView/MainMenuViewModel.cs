@@ -15,6 +15,7 @@ namespace MainMenu.ModelView
     {
         private INavigationService _iNavigationService;
         private ICommand _iCommandChangeWindowToAccountSettings;
+        private ICommand _iCommandChangeWindowToAddMember;
 
         public MainMenuViewModel()
         {
@@ -27,11 +28,28 @@ namespace MainMenu.ModelView
 
         }
 
-        public ICommand changeWindowToAccountSettingsCommand => _iCommandChangeWindowToAccountSettings ?? (_iCommandChangeWindowToAccountSettings = new RelayCommand(changeWindowToAccountSettingsCommandExe));
-
+        // Account Settings window
+        public ICommand changeWindowToAccountSettingsCommand
+        {
+            get { return _iCommandChangeWindowToAccountSettings ?? (_iCommandChangeWindowToAccountSettings = new RelayCommand(changeWindowToAccountSettingsCommandExe)); }
+        }
         public void changeWindowToAccountSettingsCommandExe()
+        {
+            _iNavigationService.showView(new AccountSettingsView());
+        }
+        // Account Settings window
+
+
+        // Add members window
+        public ICommand changeWindowToAddMember
+        {
+            get { return _iCommandChangeWindowToAddMember ?? (_iCommandChangeWindowToAddMember = new RelayCommand(changeWindowToAddmemberExe)); }
+        }
+        public void changeWindowToAddmemberExe()
         {
             _iNavigationService.ShowView(new AddMemberView());
         }
+        // Add members window
+
     }
 }
